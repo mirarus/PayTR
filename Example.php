@@ -13,17 +13,17 @@ $paytr->setConfig([
     'merchant_failed_url' => 'http://localhost/payment_failed.php' # PayTR Failed Url
 ]);
 
+/*$paytr->setLocale([
+    'currency' => 'TL', # Locale Currency
+    'lang' => 'tr' # Locale Lang
+]);*/
+
 $paytr->setCustomer([
     'name' => 'customer.name', # Customer Name
     'email' => 'customer.mail@gmail.com', # Customer Mail
     'phone' => 'customer.phone', # Customer Phone Number
     'address' => 'customer.address' # Customer Address
 ]);
-
-/*$paytr->setLocale([
-    'currency' => 'TL', # Locale Currency
-    'lang' => 'tr' # Locale Lang
-]);*/
 
 $paytr->setProduct([
     'order_id' => 300, # Product Order ID
