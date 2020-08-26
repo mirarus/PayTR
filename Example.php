@@ -20,8 +20,10 @@ $paytr->setCustomer([
     'address' => 'customer.address' # Customer Address
 ]);
 
-$paytr->setLocale('TL');
-$paytr->setLang('tr');
+/*$paytr->setLocale([
+    'currency' => 'TL', # Locale Currency
+    'lang' => 'tr' # Locale Lang
+]);*/
 
 $paytr->setProduct([
     'order_id' => 300, # Product Order ID

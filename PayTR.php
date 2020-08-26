@@ -11,7 +11,7 @@ class PayTR
 	private $customer = [];
 	private $product = [];
 	private $items = [];
-	private $country_codes = ['TL', 'USD', 'EUR', 'GBP'];
+	private $currency_codes = ['TL', 'USD', 'EUR', 'GBP'];
 	private $lang_codes = ['tr', 'en'];
 	private $currency_code;
 	private $lang_code;
@@ -85,25 +85,18 @@ class PayTR
 		}
 	}
 
-	public function setLocale($code)
+	public function setLocale($data=[])
 	{
-		if ($code != null) {
-			if (in_array($code, $this->country_codes)) {
-				$this->currency_code = $code;
-			} else{
-				exit("Invalid Currency Code");
-			}
+		if (in_array($data['currency'], $this->currency_codes)) {
+			$this->currency_code = $data['currency'];
+		} else{
+			exit("Invalid Currency Code");
 		}
-	}
 
-	public function setLang($code)
-	{
-		if ($code != null) {
-			if (in_array($code, $this->lang_codes)) {
-				$this->lang_code = $code;
-			} else{
-				exit("Invalid Lang Code");
-			}
+		if (in_array($data['lang'], $this->lang_codes)) {
+			$this->lang_code = $data['lang'];
+		} else{
+			exit("Invalid Lang Code");
 		}
 	}
 	
